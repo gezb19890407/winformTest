@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>系统日志</title>
+    <script src="../../resources/scripts/boot.js" type="text/javascript"></script>
+    <script src="scripts/page.js" type="text/javascript"></script>
+    <script src="Log.htm.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+    <div class="mini-toolbar" style="border-width: 0px 0px 1px 0px;">
+        <div id="conditionForm" class="form">
+            <table style="width: 100%;">
+                <tr>
+                    <td id="functionList" style="width: 100%; white-space: nowrap; text-align: left;">
+                        <a class="mini-button" iconcls="icon-remove" onclick="#">删除</a> <a class="mini-button"
+                            iconcls="icon-edit" onclick="#" data-options="{minSelectedCount:1,maxSelectedCount:1}">
+                            查看</a> <a class="mini-button" iconcls="icon-excel" onclick="#"
+                                data-options="{minSelectedCount:1}">导出</a>
+                    </td>
+                    <td style="white-space: nowrap; text-align: right;">
+                        <input id="mStatus" name="mStatus" class="mini-combobox" selectonfocus="true" valuefield="code"
+                            textfield="name" emptytext="操作状态..." onenter="#" />
+                        <input id="mUserID" name="mUserID" class="mini-buttonedit" selectonfocus="true" onbuttonclick="onMUserIDSelect"
+                            allowinput="false" emptytext="用户..." onenter="#" />
+                        <input name="mIp" class="mini-textbox" selectonfocus="true" emptytext="请输入IP" onenter="#" />
+                        <a class="mini-button" iconcls="icon-search" selectonfocus="true" plain="true" onclick="#;">
+                            查询</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="mini-fit">
+        <div id="logSeqNo" class="mini-datagrid" style="width: 100%; height: 100%;" borderstyle="border-width: 0px;"
+            idfield="objID" multiselect="true" showcolumnsmenu="true" frozenstartcolumn="0"
+            frozenendcolumn="1" onbeforeload="datagrid1_BeforeLoad" onselectionchanged="datagrid1_SelectionChanged"
+            pagesize="20">
+            <div property="columns">
+                <div type="checkcolumn" width="40">
+                </div>
+                <div field="logSeqNo" width="150" headeralign="center" align="left" visible="false">
+                    登陆验证</div>
+                <div field="operDate" width="130" headeralign="center" align="center" renderer="datagrid1_Renderer"
+                    allowsort="true">
+                    操作时间</div>
+                <div field="userName" width="100" headeralign="center" align="center" allowsort="true"
+                    renderer="datagrid1_Renderer">
+                    用户名</div>
+                <div field="ipAddress" width="100" headeralign="center" allowsort="true" renderer="datagrid1_Renderer">
+                    IP地址</div>
+                <div field="operParameter" width="100" headeralign="center" align="left">
+                    操作参数</div>
+                <div field="operResult" width="120" headeralign="center">
+                    操作结果</div>
+                <div name="exception" field="mLocation" width="120" headeralign="center" visible="false">
+                    异常信息</div>
+                <div field="operStatus" width="120" headeralign="center">
+                    操作状态</div>
+                <div field="modelName" width="120" headeralign="center">
+                    模块名称</div>
+                <div field="methodName" width="120" headeralign="center">
+                    方法名</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
